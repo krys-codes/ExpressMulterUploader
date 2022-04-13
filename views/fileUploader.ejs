@@ -1,0 +1,58 @@
+<div
+  class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gray-300 relative items-center"
+>
+  <div class="absolute opacity-60"></div>
+  <div class="sm:max-w-lg w-full p-8 bg-white rounded-xl">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900">File Upload!</h2>
+      <p class="text-sm text-gray-400">You can use both:</p>
+    </div>
+    <form
+      class="mt-8 space-y-3"
+      action="#"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="grid grid-cols-1 space-y-2">
+        <label
+          for="imgInput"
+          class="text-sm font-bold text-gray-500 tracking-wide"
+          >File chooser</label
+        >
+        <input
+          id="imgInput"
+          class="text-base p-3 border border-gray-300 rounded-lg cursor-pointer opacity-50 text-black"
+          name="img"
+          type="file"
+          placeholder="test"
+        />
+      </div>
+      <div class="grid grid-cols-1 space-y-2">
+        <label class="text-sm font-bold text-gray-500 tracking-wide"
+          >or image chooser</label
+        >
+        <div class="flex items-center justify-center w-full p-5">
+          <label class="flex flex-col rounded-lg max-w-xl group text-center">
+            <img
+              class="h-full object-center rounded-lg"
+              src="<%= typeof file != 'undefined' ? file : 'https://pic.onlinewebfonts.com/svg/img_520029.png' %>"
+            />
+
+            <input id="imgInput" name="img" type="file" class="hidden" />
+          </label>
+        </div>
+      </div>
+      <p class="text-sm font-bold text-gray-500 text-center tracking-wide">
+        <span> <%= typeof msg != 'undefined' ? msg : '' %> </span>
+      </p>
+      <div>
+        <button
+          type="submit"
+          class="w-full flex justify-center bg-gray-600 text-gray-100 p-4 rounded-full tracking-wide font-semibold focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+        >
+          Upload
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
